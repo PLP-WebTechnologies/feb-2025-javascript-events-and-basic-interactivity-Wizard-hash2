@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Headings </h1>
+    <button id="Butn"> Good Fellas how areyou doing sirs</button>
+    <p id='adex'> Hello Hover to change colour</p>
+    <!-- <buttonnU onclick=" alert ('Hello')"> Click to Change</button> -->
+    <button id="Butn"> click to hide and unhide</button>
+    <p id="unhide"> the word is ther</p>
+    <script>
+        const Butn = document.getElementById("Butn");
+        Butn.addEventListener('click', (e) => {
+            Butn.textContent = (`Mouse licked at  (${e.clientx}, ${e.CLIENTY})`);
+            document.body.style.backgroundColor = "Yellow"
+        });
+        const Hover = document.getElementById('adex');
+        Hover.onmouseover = function () {
+            Hover.style.color = "yellow";
+            Hover.style.fontWeight = "bold";
+
+        };
+        Hover.onmouseout = function () {
+            Hover.style.color = "black";
+            Hover.style.fontWeight = "bold";
+        }
+        const unhide = document.getElementById("unhide");
+        const buton = document.getElementById("Butn");
+        
+        buton.onclick= function() {
+            if (unhide.style.display === "none") {
+                unhide.style.display = "block";
+                buton.textContent = "Hide text";
+            }
+            else {
+                unhide.style.display = "none";
+                buton.textContent = "Unhide Text";
+
+            }
+        }
+        
+        
+
+
+
+
+    </script>
+    
+    <input type = " range" id = "fontslider" min = '10' max = '50' value = '20'>
+    
+    <p id = "textAdjuster" style = "font-size: 20px;"> adjust style </p>
+    <script>
+        const slider = document.getElementById('fontslider');
+        const text = document.getElementById('textAdjuster');
+        slider.oninput = function (){
+            text.style.fontSize = `${slider.value}px`;
+        };
+    </script>
+    <fieldset>
+        <form>
+          Email  <input type = 'email' id = 'EMAILADRRESS' name = email>
+          Name   <input type = 'text' id = 'Name' name = 'name'>
+            <button type=" submit"> Submit</button>
+            <p id = 'error MessaGE' style="color: brown;">RED</p>
+        </form>
+        <script>
+            const form = document.getElementsByTagName('form');
+            const Email = document.getElementById('EMAILADRRESS')
+            const Name = document.getElementById('Name');
+            const error = document.getElementById('error MessaGE');
+            form.onsubmit = function(E){
+                if(!Name.value)
+            {
+                e.preventDefault();
+                error.textContent = "NAME REQUIRED!!!";
+            }
+                
+            };
+
+
+        </script>
+        <fieldset>
+         Enter Name:   <input type = "text" id = 'username'>
+         <p id = "ValidationMessage"> e</p>
+         <script>
+            const userName = document.getElementById('username');
+            const Valid = document.getElementById('ValidationMessage');
+            userName.oninput= function() {
+           
+            if(userName.value.length>5)
+            {
+                Valid.textContent = "correxct"
+            }
+            else
+            Valid.textContent = 'Nope'
+            }
+
+         </script>
+        </fieldset>
+    </fieldset>
+</body>
+
+</html>

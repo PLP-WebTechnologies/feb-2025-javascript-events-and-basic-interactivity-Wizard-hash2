@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-color: green;
+            display: absolute;
+            justify-content: center;
+            margin-top: 10%;
+            background-image: url(https://images.pexels.com/photos/31660730/pexels-photo-31660730/free-photo-of-dramatic-skyscrapers-against-stormy-skies.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+            color: aliceblue;
+        }
+        
+    </style>
+</head>
+<body style="background-color: grey;">
+    <head>
+    <h1> iNTERACTIVE JS</h1>
+    <hr style="border-width: 5px; color :red">
+    </head>
+    <fieldset >
+        <input id = "Butoner" type = 'button' value="Change colour">
+        <hr>
+        <input id = 'Butoner2' type = 'button' value="MOuse UNdetected">
+        <script>
+            const Change = document.getElementById('Butoner');
+            const Butoner2 = document.getElementById('Butoner2');
+            const body = document.getElementsByTagName("Body")[0];
+            Change.addEventListener("click", () => {
+                 body.style.backgroundColor = 'green'
+                 Change.value = "Changed";
+                
+            });
+            Butoner2.onmouseenter = function(){
+               Butoner2.value = 'The Mouse IN' 
+            }
+            Butoner2.onmouseout = function(){
+               Butoner2.value = 'The Mouse out' 
+            }
+
+        </script>
+
+    </fieldset>
+    
+    <fieldset><legend>logIn Form</legend>
+
+
+    
+    <form>
+        <br>
+       
+        Name <input type = 'text' id = text placeholder="Enter any 5 letter for magic" required>
+        <br>
+        <br>
+        <br>
+        Password <input type = 'password' id = 'Password' placeholder = "Guess 4 leter" required>
+        <p id = 'Nameshower'> </p>
+        <input type = 'submit' value = 'SUBMIT'>
+        
+        <script>
+            const text = document.getElementById('text');
+            const Name = document.getElementById('Nameshower')
+            const Passcode = document.getElementById('Password');
+            text.oninput = function()
+            {
+                if(text.value.length != 5)
+            {
+                Name.style.color = 'red';
+                Name.style.fontWeight = "bold";
+                Name.textContent = (`😒🤔Yu Have entered ( ${text.value.length}) texts for name`);
+
+            }
+            else
+            {
+                Name.style.color = 'purple';
+                Name.style.fontWeight = "bold";
+                Name.textContent = (`The Name is good to proceed❤️🥹`);
+            }
+            }
+            Passcode.oninput = function()
+            {
+                if(Passcode.value.length != 4)
+            {
+                Name.style.color = 'red';
+                Name.style.fontWeight = "bold";
+                Name.textContent = (`😒🤔Yu Have entered ( ${Passcode.value.length}) texts for Password`);
+
+            }
+            else
+            {
+                Name.style.color = 'purple';
+                Name.style.fontWeight = "bold";
+                Name.textContent = (`The Password is good to proceed❤️🥹`);
+            }
+            }
+
+        </script>
+    </form>
+</fieldset>
+
+    
+</body>
+</html>
